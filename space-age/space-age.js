@@ -1,6 +1,6 @@
 function SpaceAge(seconds){
   this.seconds = seconds;
-  // I have abrieviated extraTerrestrial to et because I am not going to write that out again and again.
+  // I have abrieviated extraTerrestrial to et because I am not going to write that out again and again and also stuck the values in so I could do it without copying and pasting the values from the README.
   this.et = {'Mercury': 0.2408467,
     'Venus': 0.61519726,
     'Earth': 365.25,
@@ -44,5 +44,4 @@ function SpaceAge(seconds){
     return this.calculation(this.et['Neptune']);
   };
 }
-
 module.exports = SpaceAge;
