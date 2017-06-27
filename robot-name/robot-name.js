@@ -1,7 +1,7 @@
+const used = [];
 var Robot = function (){
-  this.used = [];
-  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   function randomLetters(){
     return `${alphabet[Math.floor((Math.random() * 26))]}${alphabet[Math.floor((Math.random() * 26))]}`;
@@ -17,22 +17,20 @@ var Robot = function (){
   this.createName = function(){
     let name = this.compileName();
 
-    while(this.used.includes(name)){
+    while(used.includes(name)){
       name = this.compileName();
     }
-    this.used.push(name);
 
+    used.push(name);
     return name;
   };
 
   this.name = this.createName();
 
-
   this.reset = function () {
     this.name = this.createName();
   };
+
 };
-
-
 
 module.exports = Robot;

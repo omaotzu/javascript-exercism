@@ -59,7 +59,7 @@ describe('Robot', function() {
       var newRobot = new Robot();
       usedNames[newRobot.name] = true;
     }
-  
+
     expect(Object.keys(usedNames).length).toEqual(numRobots);
   });
 });
