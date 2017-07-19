@@ -1,7 +1,8 @@
 function SpaceAge(seconds){
   this.seconds = seconds;
-  // I have abrieviated extraTerrestrial to et because I am not going to write that out again and again and also stuck the values in so I could do it without copying and pasting the values from the README.
-  this.et = {'Mercury': 0.2408467,
+
+  this.planet =
+  { 'Mercury': 0.2408467,
     'Venus': 0.61519726,
     'Earth': 365.25,
     'Mars': 1.8808158,
@@ -11,37 +12,36 @@ function SpaceAge(seconds){
     'Neptune': 164.79132
   };
 
+  this.earthYears = this.seconds/60/60/24/365.25;
+
   this.calculation = function(yearLength){
-    if(yearLength === this.et['Earth']){
-      return parseFloat((this.seconds/60/60/24/365.25).toFixed(2));
-    }else{
-      return parseFloat((this.seconds/60/60/24/365.25/yearLength).toFixed(2));
-    }
+    return parseFloat((this.earthYears/yearLength).toFixed(2));
   };
 
+
   this.onEarth = function(){
-    return this.calculation(this.et['Earth']);
+    return parseFloat(this.earthYears.toFixed(2));
   };
   this.onMercury = function(){
-    return this.calculation(this.et['Mercury']);
+    return this.calculation(this.planet['Mercury']);
   };
   this.onVenus = function(){
-    return this.calculation(this.et['Venus']);
+    return this.calculation(this.planet['Venus']);
   };
   this.onMars = function(){
-    return this.calculation(this.et['Mars']);
+    return this.calculation(this.planet['Mars']);
   };
   this.onJupiter = function(){
-    return this.calculation(this.et['Jupiter']);
+    return this.calculation(this.planet['Jupiter']);
   };
   this.onSaturn = function(){
-    return this.calculation(this.et['Saturn']);
+    return this.calculation(this.planet['Saturn']);
   };
   this.onUranus = function(){
-    return this.calculation(this.et['Uranus']);
+    return this.calculation(this.planet['Uranus']);
   };
   this.onNeptune = function(){
-    return this.calculation(this.et['Neptune']);
+    return this.calculation(this.planet['Neptune']);
   };
 }
 module.exports = SpaceAge;
